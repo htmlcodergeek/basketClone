@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/custom_style.css"/>
+  <script src="./assets/scripts/_custom.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>BigBasket</title>
+    <style>
+      a , .login-credentials {
+      text-decoration: none !important;
+      color:black;
+      
+  }
+
+  .login-credentials:hover {
+    background:transparent;
+    color:#2ecc71;
+    text-decoration: none;
+  }
+
+  .items {
+     display:block !important;
+     width:100%;
+     margin:0 auto !important;
+     position:relative;
+     left:380px;
+     top:25px;
+     float:left;
+  }
+  .items:nth-child(1) {
+      width:25vw !important;
+      height:auto !important;
+      background:white;
+      z-index:1030 !important; 
+        box-shadow: 19px 14px 38px -12px rgba(158,150,158,1);
+      
+     
+  }
+  .items:nth-child(2){
+        width:21vw !important;
+        height:auto !important;
+        background:white;
+        position:relative;
+        top:39px;
+      z-index:-1 !important; 
+       
+        font-size:1.3rem;
+  }
+  body .login_modal .modal-open {
+    overflow: hidden;
+}
+
+
+.items-list {
+  list-style-type:none !important;
+}
+.items-list > li{
+   display:inline-block; 
+   color:#bdc3c7;
+   width:100%;
+   text-align:center;
+   line-height:0.2;
+   padding:0 !important;
+   
+} 
+
+.items-list > li > img {
+   display:inline-block;
+   margin:0.2rem !important;
+   padding:0 !important;
+   position:relative;
+   top:-9px;
+   left:2px;
+}
+
+.items-list > li > .img-list {
+   width:70%;
+   display:inline-block;
+   text-align:justify;
+   position:relative;
+   padding:11px 8px;
+   line-height:0;
+   border-bottom:1px dashed #bdc3c7;
+}
+
+.items-list > li {
+   margin:-12px 4px !important;
+}
+.items-list > li > .img-list > h2 {
+    font-size:1.3rem !important;
+    color:#7f8c8d;
+}
+
+
+
+
+.divider {
+   border-top:1px solid #dfe6e9;
+   padding:5px !important;
+}
+
+.divider , p {
+   font-size:1.2rem !important;
+}
+
+.list-image {
+   padding:0.4rem 0.3rem !important;
+   margin:0.4rem !important;
+}
+
+
+
+  button.close {
+    width: 25px;
+    height: 25px;
+    background:transparent;
+    border-radius: 20%;
+    position: relative;
+    top: -11px;
+    right: -12px;
+    opacity:1;
+  }
+
+  button.close:hover{
+     opacity:1 !important;
+  }
+
+  .image-srk {
+     padding:10px 10px;
+     margin:5px 5px;
+
+  }
+
+  .mobile-btn {
+     padding:0.5rem 0.3rem !important;
+     width:100%;
+     margin:0 auto !important;
+     text-align:center;
+  }
+
+  .btn-mob {
+     padding:2px 3px !important;
+     width:35%;
+     display:inline-block;
+     height:30%;
+  }
+
+  /* 
+  .form-container > h3 {
+      display:inline-block;
+      padding:8px 5px; 
+      margin:0.4rem 0.3rem !important;
+      font-size:1.7rem !important;
+      color:#00cc66;
+      
+  }
+
+
+
+
+ */
+
+/* .social-icons {
+    
+    top:20%;
+    position:relative;
+    width:100%;
+    height:20vh !important;
+
+} */
+/* .after-social-icons {
+    width:100%;
+    position:relative;
+    display:block;
+    float:left;
+    top:25%;
+    color:#718093;
+    padding:5px 6px !important;
+    height:8vh !important;
+} */
+/* .form-top {
+    width:90%;
+    display:block;
+    height:33vh;
+    margin-top:23%;
+    position:relative;
+    left:5%;
+    text-align:justify;
+    
+} */
+
+/* .form-top > form > .form-control {
+  
+   outline:none !important;
+   border-bottom:1px solid #ccccb3;
+   border-left:0px !important;
+    border-top:0px !important;
+    border-right:0px !important;
+   box-shadow:0px 0px transparent !important;
+   display:block;
+   width:95%;
+   top:-5px; 
+  
+   
+   
+   
+} */
+/* .form-top > form > .form-control:focus {
+    border-bottom:2px solid #009900;
+    outline:none !important;
+    border-left:0px !important;
+    border-top:0px !important;
+    border-right:0px !important;
+} */
+
+/* .add_bottom-border {
+  border-bottom:3px solid green;
+} */
+
+/* .form-top > form > .form-control > input[type="text"]::placeholder{
+    text-align:justify !important;
+    width:90%;
+    margin:0 !important;
+}
+
+.form-top > form  {
+   width:100%;
+   height:10vh !important;
+}
+ 
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left:3px;
+  top: 4px;
+  color:#94b8b8;
+  font-size:1.5rem !important;
+  transition: 0.2s ease all;
+}
+
+input:focus ~ .floating-label {
+    top:-8px;
+    font-size:1.3rem !important;
+
+}
+input:not(:focus):valid ~ .floating-label  {
+  top: 8px;
+  font-size:1.5rem !important;
+}
+
+.error-label {
+   color:red;
+   font-size:1.3rem !important;
+   display:none ;
+}
+.gap-space {
+   width:100%;
+   height:15vh;
+   padding:15px;
+   margin:0.9 0.3rem !important;
+   
+}  */
+.form-container {
+      width:100%;
+      text-align:center;
+      padding:5px 5px !important;
+      margin:2rem 0.4rem !important;
+  }
+  .form-container > h3 {
+      display:inline-block;
+      padding:8px 5px; 
+      margin:0.4rem 0.3rem !important;
+      font-size:1.7rem !important;
+      color:#00cc66;
+      
+  }
+
+  hr {
+   border: 0;
+    border-top: 1px solid #00cc66;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    line-height:0.2;
+    margin-top:-5px;
+}
+.social-icons {
+    width:100%;
+    margin:0 auto !important;
+    text-align:center;
+}
+
+.icons-social {
+    display:inline-block !important;
+    margin:1rem 0.8rem !important;
+    width:55px;
+    height:55px;
+    border:1px solid rgba(85,85,85,0.3);
+    border-radius:50%;
+    padding:8px 7px; 
+}
+
+.icons-social:hover {
+   box-shadow:2px 0px 3px #e9e3e3;
+}
+
+.after-social-icons {
+   width:100%;
+   margin:0 auto !important;
+   height:8vh !important;
+}
+
+.after-social-icons , #textpos {
+    text-align:center;
+    padding:10px 6px;
+    color:#8395a7;
+    margin:0.4rem 0.2rem !important;
+}
+.form-top {
+    width:100% !important;
+    padding:5px 5px; 
+    margin:0.6rem 0.2rem !important;
+    position:relative;
+}
+.form-top > form > {
+    width:100%;
+    padding:10px;
+    margin:1rem 0.3rem !important;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left:1px;
+  top:10px;
+  color:#94b8b8;
+  font-size:1.5rem !important;
+  transition: 0.3s ease all;
+}
+
+.form-top > form > .form-control {
+   outline:none !important;
+   border-bottom:1px solid #ccccb3;
+   border-left:0px !important;
+   border-top:0px !important;
+   border-right:0px !important;
+   box-shadow:0px 0px transparent !important;
+   display:block;
+   width:100%;
+   top:-5px;   
+   border-radius:0;
+  
+}
+
+input:not(:focus):valid ~ .floating-label  {
+  top: 8px;
+  font-size:1.5rem !important;
+}
+
+input:focus ~ .floating-label {
+    top:-8px;
+    font-size:1.3rem !important;
+    
+}
+
+.error-label {
+   color:red;
+   font-size:1.3rem !important;
+   display:none ;
+}
+.blank-space {
+    position:relative;
+    width:100%;
+    margin:0.9rem 0.1rem !important;
+    padding:0.2rem 0.2rem !important;
+}
+.blank-space > img {
+   position:relative;
+   margin:0 auto;
+}
+.btn-sub {
+    width:90%;
+    font-size:1.8rem !important;
+    text-align:center;
+    margin:0 auto;
+    display:block;
+    background:#94cc43;
+    opacity:0.8;
+    color:white;
+    border-radius:0;
+}
+
+.btn-sub:hover {
+   background:#94cc43;
+    color:white;
+    outline:none !important;
+    opacity:1;
+    
+}
+
+.updside-bar {
+   width:90%;
+   background:transparent;
+   border:none !important;
+   margin:0 auto !important;
+   padding:1px !important;
+  
+   
+   
+   
+}
+.updside-bar > .container-fluid {
+    background:transparent !important;
+    border:0 !important;  
+}
+
+.upside-bar , .container-fluid , .navbar-header , .navbar-brand , .new_content {
+     position:relative;
+     top:-10px !important;
+     padding:3px !important;
+}
+
+.sticked-bar > .container-fluid > .navbar-header , .navbar-brand {
+     /* position:relative;
+     top:-15px;
+     left:10% !important; */
+     width:14% !important;
+     position:relative !important;
+     top:-1rem  !important;
+     left:5rem;
+     display:inline-block !important;
+     padding:5px !important;
+     /* height:50px !important; */
+     
+}
+/* .fa-search {
+   position:relative;
+  
+   background:#2ecc71;
+   color:white;
+   font-size:1.4rem;
+   display:block;
+   float:right;
+   top:24px;
+   left:-10px;
+   
+   
+   
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+form.example {
+    width:100%;
+    margin:0 auto;
+    left:90px;
+    position:relative;
+}
+form.example input[type=text] {
+  padding: 5px;
+  font-size:1.5rem;
+  font-family: 'Poppins', sans-serif;
+  border:1px solid grey !important;
+  float: left;
+  border-radius:0;
+  border-right:none !important;
+  width: 90%;
+  font-weight:500 !important;
+  /* height:4.6vh !important; */
+  background:transparent !important;
+   
+  /* background: #f1f1f1; */
+}
+form.example button {
+  float: left;
+  width:10%;
+  padding: 9px;
+  background: #2196F3;
+  color: white;
+
+  font-size:1rem;
+  border: 1px solid #88c52c;
+  border-width:thin;
+  border-left: none;
+  /* height:4.6vh !important; */
+  cursor: pointer;
+  background:#88c52c;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.search-box {
+    width:45vw;
+    height:5vh;
+    margin-left:-90px;
+}
+
+.fa-search {
+    transform:scale(2);
+    font-size:0.8rem;
+}
+
+form.example input[type=text]:focus {
+   border:1px solid #88c52c !important;
+   box-shadow:0px 0px transparent;
+   background:transparent !important;
+   
+}
+
+
+/* .search-box {
+    width:35vw;
+    height:6vh;
+    position:relative;
+    /* border:1px solid black; */
+    
+    
+} 
+/* .search-box > .search-bar ,.form-control {
+    border:1px solid black !important;
+    outline:none !important;
+   
+} */
+ 
+
+
+    </style>
+    
+</head>
+<body id="show_scroll">
+<div class="container-fluid" style="background:rgba(255,255,255,0.3) !important;border:none !important;border-radius:0;">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12">
+                     <div class="col-sm-6 col-md-6 col-xs-6 pull-right" style="font-size:1.2rem !important;">
+                           <ul class="inline-list">
+                            <li><img src="./assets/images/modified_call.png" width="30px" height="30px"/>1860 123 1000</li>
+                            <li class="list-hover" id="x">
+                         <span class="img-hover">       
+                    <svg width="22" height="22" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" style="top: 6px;display: inline-block;position: relative;padding:0px;">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.063 23.096C8.709 19.004 5.812 15.164 4.822 10.294C4.175 7.10301 5.284 4.39601 8.126 2.66601C10.731 1.08001 13.447 1.16201 16 2.82901C18.781 4.64501 19.857 7.34001 19.154 10.527C18.104 15.289 15.173 19.014 12.063 23.096ZM11.332 21.23C11.753 21.242 12.175 21.253 12.596 21.265C14.4 18.017 16.438 14.87 17.935 11.488C19.303 8.40101 18.196 5.40401 15.687 3.64801C13.443 2.07801 10.427 2.14001 8.159 3.80301C5.755 5.56501 4.684 8.47001 6.002 11.443C7.502 14.828 9.532 17.977 11.332 21.23Z" fill="black"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.89 4.73401C14.343 4.72401 16.406 6.76701 16.339 9.14101C16.274 11.439 14.248 13.385 11.965 13.342C9.65299 13.299 7.67899 11.33 7.66199 9.05001C7.64399 6.72801 9.58799 4.74401 11.89 4.73401ZM15.389 9.00601C15.253 7.53101 14.596 6.04401 12.558 5.76901C10.472 5.48701 9.11899 6.51501 8.66299 8.54001C8.27399 10.267 9.73699 12.123 11.545 12.383C13.273 12.632 15.116 11.177 15.389 9.00601Z" fill="black"/>
+                    </svg> <!--Dropdwon menu--><div class="dropdown" style="display:inline-block !important;z-index:2 !important;border:none !important;border-radius:0;">
+                    <button class="btn btn-default dropdown-toggle btn-first"  data-toggle="dropdown"><span id="clove">Jalahalli, West Bengaluru</span> <span class="fa fa-angle-down list-not-hover"></span></button>
+                    <ul class="dropdown-menu heading-menu">
+                    <div class="form-location">
+                                           <form class="form-vertical">
+                                               <label clas="control-label">Select your city to start shopping</label>
+                                               <select class="form-control">
+                                                   <option>Bangalore</option>
+                                                   <option>Chennai</option>
+                                                   <option>Hyderabad</option>
+                                                   <option>Delhi</option>
+                                               </select>
+                                               <br/>
+                                               <input type="text" class="form-control" placeholder="Enter your area/apartment/pincode"/>
+                                               <br/>
+                                               <input type="submit" class="btn btn-heading" value="continue"/>
+                                            </form>
+                                       </div>
+
+                    </ul>
+                    
+                </div>
+   <!--End Dropdwon menu-->                            
+              </li>
+                            <li>&nbsp;&nbsp;</li>
+                            <li id="login-list"><img src="./assets/images/user-svg.png" width="25px" height="25px"/>&nbsp;<a href="#" class="login-credentials" data-target="#login_modal" data-toggle="modal">Login</a> &nbsp;|</li>
+                            <li id="login-signup"><a href="#" class="login-credentials" data-target="#login_modal" data-toggle="modal">Sign up</a> &nbsp;</li>
+                           </ul>
+                     </div>
+                </div>
+                <div id="login_modal" class="modal fade"  role="dialog">
+               
+                     <div class="items">
+                     <div class="modal-body">
+                     <div class="form-container">
+                     <h3 id="login-modal">LOGIN</h3>
+                       <h3 id="sign">SIGNUP</h3>
+                       <hr class="line"/>
+                     </div>
+                     <div class="social-icons">
+                         <img src="./assets/images/logo-modal/facebook-logo.png" class="icons-social"/>
+                         <img src="./assets/images/logo-modal/google-icon.png" class="icons-social"/>
+                       </div>
+                       <div class="after-social-icons">
+                          <span id="textpos">OR</span>
+                       </div>
+                       <div class="form-top">
+                          <form>
+                              <input type="text" class="form-control" id="mbfrm" placeholder=""/>
+                              <span class="floating-label">Mobile Number(10-digit)/Email Address</span>
+                              <span class="error-label">Please enter email or mobile number</span>
+                              <div class="blank-space"><img src="./assets/images/logo-modal/blank.jpg" width="299px" height="190px"/></div>
+                              <div class="from-group">
+                              <input type="submit" class="btn btn-default btn-sub" value="Login Using OTP"/>
+                              </div>
+                          </form>
+                       </div>
+                     </div>
+                       
+                     </div>
+                      
+                  
+                      <div class="items">
+                      <div class="modal-content">
+                   
+                   <button type="button" class="close close-modal" data-dismiss="modal"><img src="./assets/images/btn-close.png"/></button>
+                   <div class="modal-body">
+                   <ul class="items-list">
+                     <li><img src="./assets/images/quality.png" width="35px" height="33px"/><div class="img-list"><h2>Quality</h2><span id="shift">You can trust</span></div></li>
+                     <li><img src="./assets/images/return-icon.png" width="35px" height="33px"/><div class="img-list"><h2>Return Policy</h2><span id="shift">No question asked</span></div></li>
+                     <li><img src="./assets/images/ontime-icon.png" width="35px" height="33px"/><div class="img-list" style="border:none !important;"><h2>ontime gurantee</h2><span id="shift">or 5% value back</span></div></li>
+                   </ul>
+                    <div class="list-image">
+                    <img src="./assets/images/login_banner.webp" width="100%" class="image-srk"/>
+                    </div>
+                    <div class="divider">
+                    <p>shopping  at finger tips ! Download our app</p>
+                    </div>
+                    <div class="mobile-btn">
+                       <img src="./assets/images/google_btn_icon.png" height="45px" class="btn-mob"/>
+                       <img src="./assets/images/apple_color_png.png" height="45px" class="btn-mob"/>
+                      </div>
+                   </div>
+                   
+                 </div>
+                </div> 
+             </div>
+             </div>
+
+                      </div>
+                      
+                   
+                    
+                   </div> 
+               </div>
+               </div>
+              
+               <div class="container-fluid" style="margin:0 auto !important;width:100%;background:rgba(255,255,255,0.3) !important;border-radius:0;border:none !important;">
+                <!--Navbar Fixed--> 
+               <nav class="navbar updside-bar">
+               <div class="container-fluid">
+               <div class="navbar-header">
+               <a class="navbar-brand" href="#"><img src="./assets/images/brand-logo/bb_logo.png"/></a>
+               </div>
+               <ul class="nav navbar-nav">
+                 <li class="search-box">
+                   <form class="example" style="max-width:490px;">
+                   
+                    <input type="text" class="form-control" placeholder="search for Products.."/>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  
+                   </form>  
+                 </li>
+                 <li style="margin-left:55px;padding:0px;">
+                    <img src="./assets/images/logo-modal/brand.png" height="35px"/>
+                 </li>
+                 <li style="background:rgba(236,232,232,0.3);margin-left:20px;margin-top:-12px;padding:2px;font-size:1.2rem;">
+                   <div class="basket" style="padding:5px !important;">
+                     <div class="cont1">
+                       <img src="./assets/images/brand-logo/basket.png" width="55px"/>
+                     </div>
+                     <div class="cont1">
+                      <p>My Basket</p>
+                      <p>0 items</p> 
+                     </div>
+                   </div>
+                 </li>
+
+               </ul>
+               </div>
+               <div class="new_content">
+                <div class="first-item">
+                <form style="border-radius:0 !important;border:none !important;">
+                  <select class="form-control" style="background:#90d02f;color:white;font-weight:bold;border-radius:0 !important;border:none !important;padding:0.4px 3px;">
+                    <option>SHOP BY CATEGORY</option>
+                  </select>
+                </form>
+                </div>
+                <div class="first-item" style="margin:0 0 !important;padding:0 !important;">
+                    <div id="offer-id" onmouseover="getColor()" onmouseout="resetColor()" style="padding:5px 7px !important;margin:0 !important;width:20%;border-radius:0 !important;border:0 !important;">
+                    <i class="fa fa-tag fa-1x chn-color" aria-hidden="true" style="color:#d63031;padding:4px 5px;border-radius:0 !important;border:none !important;transform:scale(0.9,1.2);top:2px;"></i>&nbsp;OFFERS
+                    </div>
+                </div>
+                
+                
+                
+               </nav>
+               <!--End Navbar Fixed-->
+
+               <!--Second Navbar for fixed--> 
+           <nav class="navbar sticked-bar navbar-fixed-top" style="z-index:9999 !important;display:none;box-shadow: 2px 3px 8px 0px rgba(56,52,56,0.74);padding:0 !important;">
+                        <div class="container-fluid" style="position:relative;top:2px !important;">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="./assets/images/brand-logo/bb_short_logo.png"/></a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                     <li class="second-navbar-item">
+                    <form style="border-radius:0 !important;border:none !important;">
+                    <select class="form-control" style="background:#f3fafe;box-shadow:none !important;color:black;font-weight:bold;border-radius:0 !important;border:none !important;padding:0.6px 3px;">
+                    <option>SHOP</option>
+                    </select>
+                    </form>
+                     </li>
+                     <li class="second-navbar-item">
+                        <form class="example-one">
+                         <input type="text" class="form-control" placeholder="search for Products.."/>
+                          <button type="submit"><i class="fa fa-search"></i></button>
+                        </form> 
+                     </li>
+
+                     <li class="second-navbar-item">
+                        <img src="./assets/images/logo-modal/brand.png" height="35px"/>
+                     </li>
+                     <li class="second-navbar-item1">
+                        <div class="basket" style="padding:3px 1px !important;">
+                        <div class="cont1">
+                          <img src="./assets/images/brand-logo/basket.png" width="55px"/>
+                        </div>
+                        <div class="cont1">
+                          <p>My Basket</p>
+                          <p>0 items</p> 
+                        </div>
+                      </div>
+                     </li>
+                  </ul>
+                </div>     
+           </nav>
+             <!--End Navbar Fixed-->
+               <!--End Second Navbar for fixed--> 
+  
+               <!--First Slider-->
+                <div id="MyTopCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        
+                        <li id="slider-items" data-target="#MyTopCarousel" data-slide-to="0" class="active">Immunity Boosters</li>
+                        <li id="slider-items" data-target="#MyTopCarousel" data-slide-to="1" >Tea Time Snacking</li>
+                        <li id="slider-items" data-target="#MyTopCarousel" data-slide-to="2" >Good Diet</li>
+                        <li id="slider-items" data-target="#MyTopCarousel" data-slide-to="3" >For the Perfect Breakfast</li>
+                        <li id="slider-items" data-target="#MyTopCarousel" data-slide-to="4" >Members Special</li>
+                    </ol>
+                    <!--Create Images for the Slides--> 
+                     <div class="carousel-inner">
+                        <div class="item active" value="cc_0">
+                           <img src="./assets/images/first-slider/first.webp"/>
+                           
+                        </div>
+                        <div class="item" value="cc_1">
+                           <img src="./assets/images/first-slider/second.webp"/>
+                            </div>
+                        <div class="item" value="cc_2">
+                        <img src="./assets/images/first-slider/fourth.webp"/>
+                         
+                        </div>
+                        <div class="item" value="cc_3">
+                        <img src="./assets/images/first-slider/third.webp"/>
+                        </div>
+                        <div class="item" value="cc_4">
+                           <img src="./assets/images/first-slider/fifth.webp"/>
+                   </div>
+               </div>
+      </div>
+      <br/><br/>
+<div class="container">
+ 
+            <div id="button-items">
+                       <a href="#" class="btn-items">HOME AND KITCHEN</a> 
+                       <a href="#" class="btn-items">EGGS,MEAT AND FISH</a>
+                       <a href="#" class="btn-items">Precautionary Measures</a>
+                       <a href="#" class="btn-items"></a>
+                       <a href="#" class="btn-items">COMBO STORE</a>
+                       <a href="#" class="btn-items">DEALS OF THE WEEK</a>      
+             </div>
+             <br/>
+             <br/> 
+             <div class="heading-basket">
+             <h3>My Smart Basket</h3>
+              <hr/>
+             </div>
+             <br/> 
+             <!--List iTEMS--> 
+             <div id="MyListItems" class="carousel slide"  data-ride="carousel" data-wrap="false" data-interval="false">
+                <!-- data-wrap="false" data-interval="false"-->
+                                    <div class="carousel-inner">
+                      <!--First Slide-->
+                      <div class="item active" id="cc_im">
+                          <div class="out-wrapper">
+                           <div class="list-items">
+                              <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;position:relative;top:-2px;"/></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/first.jpg"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <!-- <br/> -->
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Onion</span>
+                                  <br/>
+                                  <span class="veg-weight">1 kg</span>
+                               </div>
+                               <div class="price-list">
+                                <span>MRP <span class="strike">Rs 23.17</span><span class="actual-price">Rs 19</span></span>
+                                <div class="cargo-deliver">
+                                <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                <span>All Slots are Full Please Try Again Later</span>
+                                </div>
+                                <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                               </div>
+                              <!--End Design Cards--> 
+                            </div>
+                           </div>
+                           <div class="out-wrapper">
+                           <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;position:relative;top:-2px;"/></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/second.jpg"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Potato</span>
+                                  <br/>
+                                  <span class="veg-weight">1 kg</span>
+                                  
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 50.00</span><span class="actual-price">Rs 40</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                              </div>                           
+                              <!--End Design Cards--> 
+                            </div>
+                           </div> 
+                            <div class="out-wrapper">
+                            <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;white-space:normal;position:relative;top:-2px;"/></i></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/third.jpg"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Carrot - Local</span>
+                                  <br/>
+                                  <span class="veg-weight">
+                                    <select class="form-control input-sm select fa fa-caret-down" style="font-size:1.2rem !important;">
+                                      <option>500g - RS 24.00</option>
+                                      <option>250g - RS 14.00</option>
+                                    </select>
+                                  </span>
+                                 
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 35.00</span><span class="actual-price">Rs 24</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                               </div>
+                              <!--End Design Cards--> 
+                            </div>         
+                            </div> 
+                             <div class="out-wrapper">
+                             <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;position:relative;top:-2px;"/></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/fourth.jpg"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Capscicum - Green</span>
+                                  <br/>
+                                  <span class="veg-weight">500 g</span>
+                                  
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 57.50</span><span class="actual-price">Rs 46</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                              </div>
+                              <!--End Design Cards--> 
+                            </div>
+                            
+
+                            <!--End First Slide-->
+                      </div>
+                  </div>
+                     
+                      <div class="item" id="cc_im">  
+                             <div class="out-wrapper">
+                             <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;position:relative;top:-2px;"/></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/fourth.jpg"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Capscicum - Green</span>
+                                  <br/>
+                                  <span class="veg-weight">500 g</span>
+                                  
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 57.50</span><span class="actual-price">Rs 46</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                              </div>
+                              <!--End Design Cards--> 
+                            </div>
+                            </div>
+                              <div class="out-wrapper">
+                              <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;white-space:normal;position:relative;top:-2px;"/></i></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/tomato.png"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Tomato - hybrid</span>
+                                  <br/>
+                                  <span class="veg-weight">
+                                    <select class="form-control input-sm select fa fa-caret-down" style="font-size:1.2rem !important;">
+                                      <option>1kg - RS 26.00</option>
+                                      <option>500g - RS 13.00</option>
+                                    </select>
+                                  </span>
+                                 
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 28.00</span><span class="actual-price">Rs 26</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                               </div>
+                              <!--End Design Cards--> 
+                            </div>                           
+                              <!--End Design Cards--> 
+                            </div>
+                            
+                            <div class="out-wrapper">
+                              <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;white-space:normal;position:relative;top:-2px;"/></i></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/cucumber.png"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Cucumber</span>
+                                  <br/>
+                                  <span class="veg-weight">
+                                    <select class="form-control input-sm select fa fa-caret-down" style="font-size:1.2rem !important;">
+                                      <option>500g - RS 11.00</option>
+                                      <option>1kg  - RS 22.00</option>
+                                    </select>
+                                  </span>
+                                 
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 13.75</span><span class="actual-price">Rs 11</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                               </div>
+                              <!--End Design Cards--> 
+                            </div>                           
+                              <!--End Design Cards--> 
+                            </div>
+
+                              
+                            <div class="out-wrapper">
+                              <div class="list-items">
+                               <!--Design Cards-->
+                               <div class="head-disocunt">
+                                  <p>GET 20% OFF <img src="./assets/images/icons-btn/important.png" width="18px" height="18px" style="padding:0 !important;margin:0 !important;white-space:normal;position:relative;top:-2px;"/></i></p>
+                               </div>
+                               <div class="img-card">
+                                 <img src="./assets/images/list-items-img/beetroot.png"/>
+                               </div>
+                               <div class="price-card">
+                                  <span class="veg-icon"><img src="./assets/images/icons-btn/veg-icon.png"/></span>
+                                  <span class="supplier-name">Fresho</span>
+                                  <span class="veg-name">Beetroot</span>
+                                  <br/>
+                                  <span class="veg-weight">
+                                    <select class="form-control input-sm select fa fa-caret-down" style="font-size:1.2rem !important;">
+                                      <option>250g - RS 8.00</option>
+                                      <option>500g - RS 11.00</option>
+                                    </select>
+                                  </span>
+                                 
+                               </div>
+                               <div class="price-list">
+                                    <span>MRP <span class="strike">Rs 10.00</span><span class="actual-price">Rs 8</span></span>
+                                    <div class="cargo-deliver">
+                                       <img src="./assets/images/icons-btn/delivery_one.png"/>
+                                       <span>All Slots are Full Please Try Again Later</span>
+                                    </div>
+                                    <div class="card-items">
+                                   <label class="qt-item">Qty</label><input class="form-control input-sm  in-out" type="text" value="1"/>
+                                   <button class="btn btn-warning btn-in-add">ADD <img src="./assets/images/icons-btn/basket-btn.png"/></button>
+                                 </div>
+                               </div>
+                              <!--End Design Cards--> 
+                            </div>                           
+                              <!--End Design Cards--> 
+                            </div>
+                        <!--End-->     
+                      </div>
+                      </div>
+                      <a href="#MyListItems" role="button" data-slide="prev">
+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            
+            </a> 
+              
+              <a href="#MyListItems" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           
+            </a> 
+
+                </div>
+           
+
+             </div> 
+             <!--End List Items-->
+            
+            
+</div>
+<br/> 
+<br/> 
+<!--Third Slider-->
+<div class="container" style="margin:0 auto !important;">
+  <div id="ThirdSlider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+              <img src="./assets/images/third-slider/first.webp"/>
+            </div>
+            <div class="item">
+              <img src="./assets/images/third-slider/second.webp"/>
+            </div>
+            <div class="item">
+              <img src="./assets/images/third-slider/third.webp"/>
+            </div>
+            <div class="item">
+              <img src="./assets/images/third-slider/fourth.webp"/>
+            </div>
+        </div>
+        <a href="#ThirdSlider" role="button" data-slide="prev">
+          <span class="carousel-control-prevs-icon" aria-hidden="true"></span>
+          </a> 
+         <a href="#ThirdSlider" role="button" data-slide="next">
+           <span class="carousel-control-nexts-icon" aria-hidden="true"></span>
+         </a>           
+  </div>
+</div>
+
+<!--End Third Slider-->
+
+<!--Start Bank Details--> 
+ <div class="container">
+   <br/>
+   <br/>
+   <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Bank Offers</h4>
+       <div class="row">
+            <div class="col-md-12 col-sm-12" id="bank-img">
+                  <img src="./assets/images/bank-icons/mobwick.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/paytm.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/hsbc.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/indus.webp" class="col-md-3"/>
+            </div>
+       </div>
+ </div> 
+ <br/>
+<!--End Bank Details--> 
+
+<!--Season Must Haves--> 
+ <div class="container">
+     <br/>
+     <br/>
+     <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Season's Must-have</h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12" id="bank-img">
+                  <img src="./assets/images/bank-icons/next-slider/rakhi.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/next-slider/choco.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/next-slider/gift.webp" class="col-md-3"/>
+                  <img src="./assets/images/bank-icons/next-slider/eid.webp" class="col-md-3"/>
+        </div>
+      </div>
+      <br/>
+      <br/> 
+ </div>
+<!--End Season Must Haves--> 
+
+<!--Fruits And Vegetables--> 
+<div class="container">
+    <br/>
+     <br/>
+     <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Fruits & Vegetables Corner</h4>
+      <div class="grid-container">
+          <img src="./assets/images/bank-icons/next-slider/first-organic.webp" class="image-item1"/>
+          <img src="./assets/images/bank-icons/next-slider/second-organic.webp" class="image-item2"/>
+          <img src="./assets/images/bank-icons/next-slider/third-organic.webp" class="image-item3"/>
+          <img src="./assets/images/bank-icons/next-slider/fourth-organic.webp" class="image-item4"/>
+          <img src="./assets/images/bank-icons/next-slider/fifth-organic.webp" class="image-item5"/>
+     </div>
+</div> 
+<br/>
+<!--End Friuts Vegetables --> 
+<!--Staples--> 
+<div class="container">
+     <br/>
+     <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Your Daily Staples</h4>
+     <div class="row">
+     <div class="col-md-12 col-sm-12" id="bank-img">
+            <img src="./assets/images/bank-icons/next-slider/atta.webp" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/rice.webp" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/oil.webp" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/salt.webp" class="col-md-3"/>
+     </div> 
+   </div>
+
+</div>
+<br/>
+<!--End Staples-->
+
+<!--Staples--> 
+<div class="container">
+     <br/>
+     <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">The Snacks Corner</h4>
+     <div class="grid-container">
+            <img src="./assets/images/bank-icons/next-slider/chips.webp" class="image-item1"/>
+            <img src="./assets/images/bank-icons/next-slider/biscuit.webp" class="image-item2"/>
+            <img src="./assets/images/bank-icons/next-slider/choco_late.webp" class="image-item3"/>
+            <img src="./assets/images/bank-icons/next-slider/sauce.webp" class="image-item4"/>
+            <img src="./assets/images/bank-icons/next-slider/noddles.webp" class="image-item5"/>
+     </div> 
+
+</div>
+<br/>
+<!--End Staples-->
+<div class="container">
+    <br/>
+    <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Drinks & Beverages</h4>
+    <div class="row">
+      <div class="col-md-12 col-sm-12" id="bank-img">
+            <img src="./assets/images/bank-icons/next-slider/tea.webp" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/cofee.jpg" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/health.jpg" class="col-md-3"/>
+            <img src="./assets/images/bank-icons/next-slider/cold_drinks.jpg" class="col-md-3"/>
+      </div>
+    </div>
+</div>
+<!--Cleaning & Household-->
+<div class="container">
+    <br/>
+    <br/>
+    <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Cleanning & Household</h4>
+      <div class="row">
+         <div class="col-md-12 col-sm-12" id="household-img">
+            <img src="./assets/images/bank-icons/next-slider/wash.jpg" class="col-md-2"/>
+            <img src="./assets/images/bank-icons/next-slider/detergents.jpg" class="col-md-2"/>
+            <img src="./assets/images/bank-icons/next-slider/cloth_wash.jpg" class="col-md-2"/>
+            <img src="./assets/images/bank-icons/next-slider/cleanning.jpg" class="col-md-2"/>
+            <img src="./assets/images/bank-icons/next-slider/freshers.jpg" class="col-md-2"/>
+            <img src="./assets/images/bank-icons/next-slider/pooja.jpg" class="col-md-2"/>
+         </div>    
+      </div> 
+      <br/>
+</div> 
+<!--End Cleanning-->
+        <div class="container">
+            <br/>
+            <br/>
+            <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Beauty & Hygiene</h4>
+              <div class="grid-container">
+                <img src="./assets/images/bank-icons/next-slider/handwash.webp" class="image-item1"/>
+                <img src="./assets/images/bank-icons/next-slider/makeup.webp" class="image-item2"/>
+                <img src="./assets/images/bank-icons/next-slider/skin.webp" class="image-item3"/>
+                <img src="./assets/images/bank-icons/next-slider/shampoo.webp" class="image-item4"/>
+                <img src="./assets/images/bank-icons/next-slider/wellness.webp" class="image-item5"/>
+              </div>    
+        </div>
+
+        <!--up to 50% Off--> 
+        <div class="container">
+            <br/>
+            <br/>
+            <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Home & Kitchen - Up to 50% Off</h4>
+            <div class="row">
+            <div class="col-md-12 col-sm-12" id="household-img">
+                <img src="./assets/images/bank-icons/next-slider/149.webp" class="col-md-2"/>
+                <img src="./assets/images/bank-icons/next-slider/299.webp" class="col-md-2"/>
+                <img src="./assets/images/bank-icons/next-slider/essentials.webp" class="col-md-2"/>
+                <img src="./assets/images/bank-icons/next-slider/360.webp" class="col-md-2"/>
+                <img src="./assets/images/bank-icons/next-slider/glassware.webp" class="col-md-2"/>
+                <img src="./assets/images/bank-icons/next-slider/brooms.webp" class="col-md-2"/>
+            </div>    
+          </div>
+          <br/>
+        </div> 
+         <br/>
+        <!--Last Slider--> 
+        <div class="container" style="margin:0 auto !important;">
+        <div id="FourthSlider" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" style="border:0 !important;width:100% !important;margin:0.2rem 0.3rem !important;">
+                  <div class="item active">
+                    <img src="./assets/images/bank-icons/last-slider/amul.webp"/>
+                   </div>
+                 <div class="item">
+                   <img src="./assets/images/bank-icons/last-slider/petstore.webp"/>
+                  </div>
+                  
+              </div>
+              <a href="#FourthSlider" role="button" data-slide="prev">
+              <span class="carousel-control-prevs-icons" aria-hidden="true"></span>
+              </a> 
+              <a href="#FourthSlider" role="button" data-slide="next">
+              <span class="carousel-control-nexts-icons" aria-hidden="true"></span>
+              </a>
+        </div>
+        </div>
+       
+        <!--End Last Slider--> 
+
+        <div class="container">
+          <br/>
+          <br/>
+          <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Brand Store</h4>
+          <div class="brand-container">
+            <img src="./assets/images/bank-icons/last-slider/brand_a.webp"/>
+            <img src="./assets/images/bank-icons/last-slider/brand_d.webp"/>
+            <img src="./assets/images/bank-icons/last-slider/brand_c.webp"/>
+            <img src="./assets/images/bank-icons/last-slider/brand_l.webp"/>
+            <img src="./assets/images/bank-icons/last-slider/brand_p.webp"/>
+            <img src="./assets/images/bank-icons/last-slider/brand_dd.webp"/>
+          </div>
+       </div>
+       <br/>
+    
+       <div class="container">
+         <br/>
+         <br/> 
+         <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);">Featured Receipes</h4>
+          <div id="LastSlider" class="carousel slide" data-ride="slide">
+          <div class="carousel-inner" style="border:0 !important;width:100% !important;margin:0.2rem 0.3rem !important;">
+                  <div class="item active">
+                    <img src="./assets/images/bank-icons/last-slider/slide_1.webp"/>
+                   </div>
+                 <div class="item">
+                   <img src="./assets/images/bank-icons/last-slider/slide_2.webp"/>
+                  </div>
+                  <div class="item">
+                   <img src="./assets/images/bank-icons/last-slider/slide_3.webp"/>
+                  </div>
+                  <div class="item">
+                   <img src="./assets/images/bank-icons/last-slider/slide_4.webp"/>
+                  </div>
+                  <div class="item">
+                   <img src="./assets/images/bank-icons/last-slider/slide_5.webp"/>
+                  </div>
+                  
+              </div>
+              <a href="#LastSlider" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </a> 
+              <a href="#LastSlider" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </a>   
+
+          </div> 
+       </div>
+       <br/>
+       <div class="container">
+          <div class="text-surround">
+              <img src="./assets/images/big-text/bigbasket_text.png" class="first-img-slide"/>
+              <br/>
+              <button class="btn btn-default btn-sm" id="display_second">Read more ..</button>
+              <img src="./assets/images/big-text/second_text.png" class="second-img-slide"/>
+          </div>
+          
+
+       </div>
+
+       <a href="#" id="top_to" onclick="animateScreen()" style="z-index:9999 !important;"><img src="./assets/images/top-icon/top-icon.png"/></a>
+     <br/>
+     <div class="container">
+        <div class="footer-container">
+            <div class="item-footer">
+             <h4>big basket</h4>
+              <div class="links-footer">
+                  <a href="#">About us</a> 
+                  <a href="#">In News</a> 
+                  <a href="#">Green Basket</a> 
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">Affiliate</a>
+                  <a href="#">Terms And Conditions</a>
+                  <a href="#">Carrer at bigbasket</a>
+                  <a href="#">bb instant</a>
+                  <a href="#">bb daily</a>
+             </div>             
+            </div>
+            <div class="item-footer">
+               <h4>Help</h4>
+               <div class="links-footer">
+                  <a href="#">FAQs</a> 
+                  <a href="#">Contact Us</a> 
+                  <a href="#">bb wallet FAQs</a> 
+                  <a href="#">bb wallet T&Cs</a>
+                  <a href="#">Vendor Connect</a>
+             </div>
+            </div>
+            <div class="item-footer">
+                <h4>Download Our App</h4>
+                <div class="links-footer">
+                    <a href="#"><img src="./assets/images/apps/google-icon.png"/></a>
+                    <a href="#"><img src="./assets/images/apps/apple-icon.png"/></a>
+                </div>
+            </div>
+            <div class="item-footer">
+              <h4>Get Social With Us</h4>
+              <div class="social-links-footer">
+                <a href="#"><img src="./assets/images/social-media/f_1.png" id="facebook" value="f_2" onmouseover="hideImage(this)" onmouseout="sameImage(this)" style="border:2px solid #0d23f9 !important;"/></a>
+                <a href="#"><img src="./assets/images/social-media/p_1.png" id="facebook" value="p_2" onmouseover="hideImage(this)" onmouseout="sameImage(this)" style="border:2px solid #cb0932 !important;"/></a>
+                <a href="#"><img src="./assets/images/social-media/t_1.png" id="facebook" value="t_2" onmouseover="hideImage(this)" onmouseout="sameImage(this)" style="border:2px solid #1b9ced !important;"/></a>
+                <a href="#"><img src="./assets/images/social-media/i_1.png" id="facebook" value="i_2" onmouseover="hideImage(this)" onmouseout="sameImage(this)" style="border:2px solid #042e49 !important;"/></a>
+              </div>  
+            </div>
+        </div>
+     </div>
+
+     <!--Last Paragraph-->
+     <div class="container">
+       <br/>
+       <h4 style="display:block !important;text-align:center;font-size:2.3rem !important;padding:5px 6px !important;border-bottom:1px solid rgba(224, 219, 219, 0.814);"></h4>
+       <img src="./assets/images/big-text/third_text.png"/> 
+       <br/>
+       <img src="./assets/images/big-text/fourth_text.png"/>  
+        
+      </div>
+      <br/>
+     
+</div>
+<div class="footer">
+       <p>Copyright © 2019-2021 Supermarket Grocery Supplies Pvt Ltd</p>      
+      </div>
+
+
+
+
+
+
+
+
+  
+            
+           
+            
+           
+          
+            
+           
+         <script>
+          $(document).ready(function(){
+             $(window).scroll(function(){
+              var scrollTop = $(window).scrollTop();
+              if(scrollTop > 12){
+                 $('.updside-bar').css('display','none');
+                 $('.sticked-bar').css('display','block'); 
+              }else{
+                $('.updside-bar').css('display','block');
+                 $('.sticked-bar').css('display','none');  
+              }
+             });
+            
+            // var new_top = $(window).height();
+            $("#top_to").css('display','none');
+            $(window).scroll(function(){
+                var scroll_height = $(document).scrollTop();
+                var adjust = (scroll_height) ;
+                
+                if(parseInt(scroll_height) > 120) {
+                  //  $("#top_to").css('top',adjust+'px');
+                   $("#top_to").css('display','block');
+                }else{
+                  $("#top_to").css('display','none');
+                }
+            });
+
+            $('#MyTopCarousel').bind('slid.bs.carousel',function(){
+              $('.carousel-indicators li').each(function(){
+                    if($(this).hasClass("active")){
+                          
+                          var id_attr = $(this).attr("data-slide-to");
+                          $('#cc_'+id_attr).addClass("active-caption");
+                       }else{
+                         
+                         var id_attr = $(this).attr("data-slide-to");
+                          $('#cc_'+id_attr).removeClass("active-caption");
+                       }
+
+                   });
+
+            });
+                
+            
+          });
+
+          $("#display_second").on('click',function(){
+               $('.second-img-slide').css('display','block');
+               $("#display_second").css('display','none');
+          });
+          
+          function getColor(){
+              let cl = document.querySelector(".fa-tag");
+              $(cl).css("color","white");
+
+          }
+
+          function resetColor(){
+            let cl = document.querySelector(".fa-tag");
+            $(cl).css("color","#d63031");
+          }
+       
+         function animateScreen(){
+          $("html, body").animate( 
+                { scrollTop: "0" },6000); 
+         } 
+
+         function hideImage(ele){
+          var image_value = ele.getAttribute('value');
+              ele.setAttribute('src','./assets/images/social-media/'+image_value+'.png');
+         }
+
+         function sameImage(ele){
+           var first  = ele.getAttribute('value').split('_')[0];
+           var second = ele.getAttribute('value').split('_')[1]-1;
+           ele.setAttribute('src','./assets/images/social-media/'+first+'_'+second+'.png');
+         }
+         
+          $('#x').click(function(){
+                 $('body').toggleClass("overlay");
+                 $(".fa-angle-down").toggleClass("fa-angle-up");
+               });
+
+               $('.form-vertical').click(function(){
+                $('body').toggleClass("overlay");
+               });
+                
+               
+                  
+                
+              
+
+               $('#login-list').click(function(){
+                    $('#login-modal').css('font-weight','bold');
+                    $('#login-modal').css('border-bottom','2px solid #00cc66');
+                    $('#login-modal').css('width','25%');
+                   
+                    $('.btn-sub').attr('value','Login Using OTP');
+                    //signup modal
+                    $('#sign').css('font-weight','100');
+                     $('#sign').css('border-bottom','0px');
+                    $('#sign').css('width','25%');
+               });
+
+               $('#login-signup').click(function(){
+                    $('#sign').css('font-weight','bold');
+                    $('#sign').css('border-bottom','2px solid #00cc66');
+                    $('#sign').css('width','25%');
+                    $('.btn-sub').attr('value','Signup using OTP')
+
+                    $('#login-modal').css('font-weight','100');
+                     $('#login-modal').css('border-bottom','0px');
+                     $('#login-modal').css('width','25%');                    
+
+               });
+
+               $('#mbfrm').focusout(function(){
+                    var value = $('#mbfrm').val();
+                    if($.trim(value) != ""){
+                        var floating_styles ={
+                          'top':'-8px',
+                          'font-size':'1.3rem !important',
+                        } 
+                        $('.floating-label').css(floating_styles);
+                    }else{
+                       console.log("space");
+                       var styles = {
+                            'border-bottom':'2px solid #ff1a1a',
+                             
+                       };
+                       
+                       $('.error-label').css('display','block');
+                       $('#mbfrm').css(styles);
+                    }
+
+
+                   
+               });
+
+
+         
+         </script>   
+        
+            
+           
+
+           
+          
+         
+</body>
+</html>
